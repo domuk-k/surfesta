@@ -19,5 +19,5 @@ jobs:
             cd surfesta
             git pull origin master
             git status
-            cd client && npm run build && npm run serve
-            cd ../server && npm start
+            cd client && npm ci && npm run build && npm run serve
+            cd ../server  && npm ci && npm start
