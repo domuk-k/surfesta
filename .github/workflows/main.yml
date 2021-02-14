@@ -11,23 +11,21 @@ jobs:
       - name: testing domuk.kro.kr server connection
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: 13.125.121.25
+          host: surfesta.site
           username: ubuntu
           key: ${{ secrets.DOMUK_SECRET }}
           port: 22
           script: |
             git pull
             export NVM_DIR=~/.nvm
-            source ~/.nvm/nvm.sh                
+            source ~/.nvm/nvm.sh  
+            pm2 kill              
             cd surfesta
             git pull origin master
             git status
             cd client
             npm install
-            npm run build
-            pm2 kill
-            pm2 start "npm run serve"
+            pm2 start "npm start"
             cd ../server
             npm install
-            npm start
             pm2 start "npm start"
