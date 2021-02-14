@@ -11,7 +11,7 @@ jobs:
       - name: testing domuk.kro.kr server connection
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: ubuntu@13.125.121.25
+          host: ec2-13-125-121-25.ap-northeast-2.compute.amazonaws.com
           username: ubuntu
           key: ${{ secrets.DOMUK_SECRET }}
           port: 22
