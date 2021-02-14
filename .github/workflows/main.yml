@@ -28,4 +28,4 @@ jobs:
             pm2 start "npm start"
             cd ../server
             npm install
-            pm2 start "npm start"
+            pm2 start "npm run backend"
