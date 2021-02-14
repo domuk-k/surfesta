@@ -12,7 +12,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.4
         with:
           host: domuk.kro.kr
-          username: domuk
+          username: ubuntu
           key: ${{ secrets.DOMUK_SECRET }}
           port: 22
           script: |
