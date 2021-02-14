@@ -11,7 +11,7 @@ jobs:
       - name: testing domuk.kro.kr server connection
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: domuk.kro.kr
+          host: 13.125.121.25
           username: ubuntu
           key: ${{ secrets.DOMUK_SECRET }}
           port: 22
