@@ -16,6 +16,9 @@ jobs:
           key: ${{ secrets.DOMUK_SECRET }}
           port: 22
           script: |
+            git pull
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh                
             cd surfesta
             git pull origin master
             git status
