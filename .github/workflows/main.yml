@@ -1,0 +1,21 @@
+name: Deployment Workflow
+on: 
+  push: 
+    branches: [master]
+
+jobs:
+  job_one: 
+    name: Deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing domuk.kro.kr server connection
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: domuk.kro.kr
+          username: domuk
+          key: ${{ secrets.DOMUK_SECRET }}
+          port: 22
+          script: |
+            cd surfesta
+            git pull origin master
+            git status
